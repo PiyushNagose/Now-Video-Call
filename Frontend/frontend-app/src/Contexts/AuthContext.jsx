@@ -19,13 +19,13 @@ export const AuthProvider = ({ children }) => {
 
   const handleRegister = async (username, email, password) => {
     try {
-      let request = await client.post("/register", {
+      let request = await client.post("/signup", {
         username: username,
         email: email,
         password: password,
       });
 
-      if (request.status === httpStatus.CREATED) {
+      if (request.status === 201) {
         return request.data.message;
       }
     } catch (err) {
