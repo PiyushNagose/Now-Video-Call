@@ -14,6 +14,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import server from "../environment";
+import { useNavigate } from "react-router-dom";
 
 const server_url = server;
 
@@ -24,6 +25,8 @@ const peerConfigConnections = {
 };
 
 export default function VideoMeet() {
+  const navigate = useNavigate();
+
   var socketRef = useRef();
   let socketIdRef = useRef();
 
@@ -452,15 +455,15 @@ export default function VideoMeet() {
     setModal(!showModal);
   };
 
-  let handleEndcall = () => {
+  let handleEndCall = () => {
     try {
       let tracks = localVideoRef.current.srcObject.getTracks();
       tracks.forEach((track) => track.stop());
     } catch (e) {
-      conosole.log(e);
+      console.log(e);
     }
 
-    window.location.href = "/home";
+    navigate("/home");
   };
 
   let sendMessage = () => {
@@ -562,7 +565,7 @@ export default function VideoMeet() {
             <IconButton onClick={handleVideo}>
               {video === true ? <VideocamIcon /> : <VideocamOffIcon />}
             </IconButton>
-            <IconButton onClick={handleEndcall}>
+            <IconButton onClick={handleEndCall}>
               <CallEndIcon style={{ color: "red" }} />
             </IconButton>
 
