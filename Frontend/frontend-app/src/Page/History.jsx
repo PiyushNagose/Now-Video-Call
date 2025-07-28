@@ -4,7 +4,7 @@ import { AuthContext } from "../Contexts/AuthContext";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import styles from "../styles/videoComponent.module.css";
+import styles from "../styles/VideoComponent.module.css";
 import { IconButton } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 

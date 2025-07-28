@@ -1,5 +1,5 @@
 import { IconButton } from "@mui/material";
-import styles from "../styles/videoComponent.module.css";
+import styles from "../styles/VideoComponent.module.css";
 import withAuth from "../Utils/withAuth";
 import RestoreIcon from "@mui/icons-material/Restore";
 import { useNavigate } from "react-router-dom";
